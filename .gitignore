@@ -67,3 +67,11 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Build artifacts
+/build/
+/bin/
+/obj/
+*.local
+*.elf
+*.hex
