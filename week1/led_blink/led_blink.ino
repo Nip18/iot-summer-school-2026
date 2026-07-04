@@ -1,3 +1,11 @@
+/*
+ * Project: Variable Speed LED Blink with Telemetry
+ * Author: Nipun Pandkar
+ * Date: July 2026
+ * Description: Reads an analog potentiometer input to adjust LED blinking 
+ * frequency while tracking execution iterations via Serial.
+ */
+
 int blinkCount = 0;
 const int potPin = A0;
 
