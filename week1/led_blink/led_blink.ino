@@ -1,14 +1,18 @@
 int blinkCount = 0;
+const int potPin = A0;
+
 void setup() {
   pinMode(13, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
+  int sensorValue = analogRead(potPin); // Reads values from 0 to 1023
+  
   digitalWrite(13, HIGH);
-  delay(500);
+  delay(sensorValue);
   digitalWrite(13, LOW);
-  delay(500);
+  delay(sensorValue);
   
   blinkCount++;
   Serial.print("Blink count: ");
