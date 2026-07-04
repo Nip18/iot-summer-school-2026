@@ -5,7 +5,6 @@
  * Description: Reads an analog potentiometer input to adjust LED blinking 
  * frequency while tracking execution iterations via Serial.
  */
-
 int blinkCount = 0;
 const int potPin = A0;
 
