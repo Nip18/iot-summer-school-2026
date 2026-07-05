@@ -2,9 +2,9 @@ import os
 
 def count_ino_files():
     ino_count = 0
-    # Walk through all directories and subdirectories
+    # to walk through all directories and subdirectories
     for root, dirs, files in os.walk('.'):
-        # Skip hidden Git tracking directories
+        # to skkip hidden Git tracking directories
         if '.git' in root:
             continue
         for file in files:
