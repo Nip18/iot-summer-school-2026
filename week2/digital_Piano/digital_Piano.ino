@@ -16,15 +16,25 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(BUTTON_DO) == LOW) {
-    tone(BUZZER_PIN, scaleNotes[0]);
-  } else if (digitalRead(BUTTON_RE) == LOW) {
-    tone(BUZZER_PIN, scaleNotes[1]);
-  } else if (digitalRead(BUTTON_MI) == LOW) {
-    tone(BUZZER_PIN, scaleNotes[2]);
-  } else if (digitalRead(BUTTON_FA) == LOW) {
-    tone(BUZZER_PIN, scaleNotes[3]);
+  bool pressDo = (digitalRead(BUTTON_DO) == LOW);
+  bool pressRe = (digitalRead(BUTTON_RE) == LOW);
+  bool pressMi = (digitalRead(BUTTON_MI) == LOW);
+  bool pressFa = (digitalRead(BUTTON_FA) == LOW);
+
+  // check if two or more buttons are pressed simultaneously
+  int pressedCount = pressDo + pressRe + pressMi + pressFa;
+
+  if (pressedCount >= 2) {
+    tone(BUZZER_PIN, 392); // play Sol (392Hz) as a chord substitute
+  } else if (pressDo) {
+    tone(BUZZER_PIN, 262);
+  } else if (pressRe) {
+    tone(BUZZER_PIN, 294);
+  } else if (pressMi) {
+    tone(BUZZER_PIN, 330);
+  } else if (pressFa) {
+    tone(BUZZER_PIN, 349);
   } else {
-    noTone(BUZZER_PIN); // silence the buzzer when released
+    noTone(BUZZER_PIN);
   }
 }
