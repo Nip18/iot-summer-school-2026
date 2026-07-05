@@ -1,0 +1,24 @@
+name: Count Arduino Sketches
+
+# to trigger the workflow automatically on every push event to the repository
+on: [push]
+
+jobs:
+  run-scan:
+    # to run the task on a clean, hosted Ubuntu Linux container
+    runs-on: ubuntu-latest
+
+    steps:
+    # S1: check out the repository codebase onto the runner runner
+    - name: Checkout repository assets
+      uses: actions/checkout@v4
+
+    # S2: set up a stable runtime environment for Python execution
+    - name: Initialize Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    # S3: run the custom counting script
+    - name: Execute ino counter script
+      run: python count_ino.py
