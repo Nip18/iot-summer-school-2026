@@ -21,7 +21,6 @@ Developed using ESP32, Arduino IDE, and Wokwi Simulator.
 Each project contains:
 
 - Source Code
-- Wiring Diagram
 - README
 - Demo Video Link
-- Screenshots
+- Screenshots/images
