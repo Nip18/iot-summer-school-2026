@@ -1,17 +1,3 @@
-/*
- * ==========================================================
- * Project 7: Motion-Based Security System
- * IIT Jammu Summer School 2026
- * ==========================================================
- * Components:
- * - Arduino Uno
- * - PIR Motion Sensor
- * - Green LED
- * - Red LED
- * - Active Buzzer
- * ==========================================================
- */
-
 const int PIR_PIN = 2;
 
 const int GREEN_LED = 8;
