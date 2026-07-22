@@ -1,5 +1,4 @@
 #include <Wire.h>
-
 void scanPins(int sda, int scl) {
   Wire.end();
   Wire.begin(sda, scl);
